@@ -1,0 +1,30 @@
+<div style=" height: 100%; background-image: url('https://assets-global.website-files.com/634e7aa49f5b025e1fd9e87b/63b5a8eac8b48c7cb41fa245_How%20to%20Choose%20Music_2%20.png');">
+    <div  style="display: flex;justify-content: center;  height: 100%; background-color: rgba(0, 0, 0, 0.205);">
+       
+   
+        <mat-tab-group preserveContent style="width: 100%; margin-top: -50px;"  >
+            <mat-tab >       
+<div class="container mt-2" style="background-color: rgba(245, 245, 245, 0.502);">
+    <h2 class="ms-3 mt-3">Trending Musics</h2>
+    <mat-card matRipple class="card" *ngFor="let video of allProducts">
+        <a>
+        <img mat-card-image src={{video?.img}}>
+        </a>
+        <!-- <div id="duration">{{ video.contentDetails.length }}</div> -->
+        <mat-card-content>
+            <h6>Title</h6>
+            <h5>{{video?.name}}</h5>
+            <h6>Singer</h6>
+            <h5>{{video?.desc}}</h5>
+            <h6>Time</h6>
+           <h5>{{video?.price}} min</h5>
+       <div class="mb-2" ><button (click)="onSub()" class="btn btn-outline-primary" style="width: 100%;" >Subscribe</button>
+           </div>
+         
+        </mat-card-content>
+       </mat-card>
+    </div>
+    </mat-tab>
+    </mat-tab-group>
+    </div>
+    </div>

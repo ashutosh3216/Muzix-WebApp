@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg " style="background-color: #3b4294; ">
+  <div class="container-fluid ms-lg-5 me-lg-5 ">
+    <div>
+      <img class="offcanvas-title" id="offcanvasNavbarLabel" src="../assets/headphones.png" width="40px" height="40px">
+      <a class="navbar-brand ms-5" href="#" style="color: #fff;">BuzzilyFree</a>
+      </div>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"> -->
+      <!-- <span class="navbar-toggler-icon"></span> -->
+    <!-- </button> -->
+    
+    <div class="collapse navbar-collapse ms-lg-5 mt-3" id="navbarText"   >
+      <span class="navbar-text me-auto ">
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+    
+      </span>
+      <ul class="navbar-nav   mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" routerLink="/appDashboard" style="color: #fff;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  routerLink="/signUpView" style="color: #fff;">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/loginView" style="color: #fff;">LogIn</a>
+        </li> -->
+        <li class="nav-item">
+          <!-- <a class="nav-link active" routerLink="/logout" style="color: #fff;" ><img src="../assets/log-out.png" style="height: 22px;width: 22px;" alt=""> LogOut</a> -->
+        </li>
+      
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<router-outlet (activate)="logOut()" ></router-outlet>

@@ -1,0 +1,67 @@
+<!-- <h1 style="text-align: center;" >hi {{userDetails?.userName}} ,</h1> -->
+
+
+<div style=" height: 100%; background-image: url('https://assets-global.website-files.com/634e7aa49f5b025e1fd9e87b/63b5a8eac8b48c7cb41fa245_How%20to%20Choose%20Music_2%20.png');">
+    <div  style="display: flex;justify-content: center;  height: 100%; background-color: rgba(0, 0, 0, 0.205);">
+        <a class="nav-link active"(click)="handleWarningAlert()" style=" width: 22px; height: 22px;"  ><img src="../assets/log-out.png" style="height: 30px;width: 30px; position: absolute;top: 12px; right: 12px;" alt="" ></a>
+
+ <mat-tab-group preserveContent style="width: 100%;" >
+        <mat-tab label="All Musics">
+            <div class="container mt-2" style="background-color: rgba(245, 245, 245, 0.541);">
+      <h2 class="ms-3 mt-2">Trending Music</h2>
+                <mat-card matRipple class="card" *ngFor="let video of allProducts">
+                    <a>
+                    <img mat-card-image src={{video?.img}}>
+                    </a>
+                    <!-- <div id="duration">{{ video.contentDetails.length }}</div> -->
+                    <audio controls #audio (pause)="onPause()" style="width:100%">
+                        <source src={{video?.m}} />
+                       </audio>
+                    <mat-card-content>
+                        <h6>Title</h6>
+                        <h5>{{video?.name}}</h5>
+                        <h6>Singer</h6>
+                        <h5>{{video?.desc}}</h5>
+                        <h6>Time</h6>
+                       <h5>{{video?.price}} min</h5>
+                
+                        <button id="cart" (click)="handleWarningAlertToADDPlaylist(video)" class="btn btn-outline-secondary  me-3" style="width: 100%;"  >Add to PlayList</button>
+                  
+                    </mat-card-content>
+                   </mat-card>
+                </div>
+        </mat-tab>
+        <mat-tab label="PLayList">
+
+
+            <div class="container mt-2" style="background-color: rgba(245, 245, 245, 0.548);">
+                <h2 class="ms-3 mt-3">My PlayList</h2>
+                <mat-card matRipple class="card" *ngFor="let video of arr">
+                    <a>
+                    <img mat-card-image src={{video?.img}}>
+                    </a>
+                    <audio controls #audio (pause)="onPause()" style="width:100%">
+                        <source src={{video?.m}} />
+                       
+                       </audio>
+
+                    <!-- <div id="duration">{{ video.contentDetails.length }}</div> -->
+                    <mat-card-content>
+                        <h6>Title</h6>
+                        <h5>{{video?.name}}</h5>
+                        <h6>Singer</h6>
+                        <h5>{{video?.desc}}</h5>
+                        <h6>Time</h6>
+                       <h5>{{video?.price}} min</h5>
+                    
+                       <div >
+                        <!-- <button id="play" (click)="onPlay()" class="btn btn-outline-danger"  >Play</button> -->
+                        <button id="cart" (click)="handleWarningAlertForPlaylist(video)"   class="btn btn-outline-secondary  me-3" style="width: 100%;"  >Remove</button>
+                    </div>
+                    </mat-card-content>
+                   </mat-card>
+                </div>
+            </mat-tab>
+      </mat-tab-group>
+      </div>
+      </div>

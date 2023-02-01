@@ -1,0 +1,62 @@
+
+<div style=" height: 100%; background-image: url('https://assets-global.website-files.com/634e7aa49f5b025e1fd9e87b/63b5a8eac8b48c7cb41fa245_How%20to%20Choose%20Music_2%20.png');">
+    <div  style="display: flex;justify-content: center;  height: 100%; background-color: rgba(0, 0, 0, 0.205);">
+  
+
+<div style="display: flex;justify-content: center; height: fit-content" class="mt-3" >
+    <div class="me-5 ms-5 mt-5" style="width: 500px; padding: 24px; border-radius: 12px;background-color: rgba(245, 245, 245, 0.596);">
+        <h1>Signup Form</h1>
+
+<div>
+    <form class="form" (ngSubmit)="sendSignupData()" [formGroup]="profileForm">
+       
+        <mat-form-field style="width: 100%;">
+            <mat-label for="userName" >User Name</mat-label>
+                <input matInput type="text" id="userName" formControlName="userName" />
+                <mat-error *ngIf="userName?.errors?.['required']">
+                    User Name is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field style="width: 100%;">
+                <mat-label for="emailId">Email address</mat-label>
+                <input matInput  type="text" id="emailId" formControlName="emailId" />
+                <mat-error *ngIf="emailId?.errors?.['required']">
+                     MailId is required.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field style="width: 100%;">
+                <mat-label for="password" >Password</mat-label>
+                <input matInput type="password" id="password" formControlName="password">
+                <mat-error *ngIf="password?.errors?.['required']">
+                    Password is required.
+                </mat-error>
+                <mat-error *ngIf="password?.errors?.['pattern']">
+                    Password should have min 8 letter password, with at least a symbol, upper and lower case letters
+                    and a number.
+                </mat-error>
+
+            </mat-form-field>
+        
+            <mat-form-field style="width: 100%;">
+                <mat-label for="mobileNo" >Contact No</mat-label>
+                <input matInput type="text" id="mobileNo" formControlName="mobileNo">
+                <mat-error *ngIf="mobileNo?.errors?.['pattern']">
+                    Valid phone number contains 10 digits starting with 7/8/9
+                </mat-error>
+            </mat-form-field>
+           
+        <mat-form-field style="width: 100%;">
+            <mat-label for="address" >Address</mat-label>
+                    <input matInput type="text" placeholder="Address" id="address" formControlName="address">
+                </mat-form-field>
+
+          
+            <button color="primary" mat-button mat-raised-button [disabled]="!profileForm.valid" type="submit">Submit</button>
+   
+    </form>
+</div>
+</div>
+</div>
+</div>
+
